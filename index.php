@@ -1,26 +1,22 @@
 <?php
 include('inc/header.php'); ?>
 
-<section id="slider">
 
 <div class="slideshow-container">
 
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img src="asset/img/stat1.png" style="width:100%">
-        <div class="text">Caption Text</div>
+        <img src="asset/img/stat2.gif">
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
-        <img src="asset/img/stat2.jpg" style="width:100%">
-        <div class="text">Caption Two</div>
+        <img src="asset/img/stat1.jpg">
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img src="asset/img/stat3.jpg" style="width:100%">
-        <div class="text">Caption Three</div>
+        <img src="asset/img/stat3.jpg">
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -34,4 +30,5 @@ include('inc/header.php'); ?>
     <span class="dot" onclick="currentSlide(3)"></span>
 </div>
 
-</section>
+
+<script src="asset/js/main.js"></script>

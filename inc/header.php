@@ -13,10 +13,10 @@
 
     <div class="menufixed">
         <div class="icon-bar">
-            <a class="active" href="#"><img src="asset/img/home.svg" width="40px"><p>Accueil</p></a>
-            <a href="#"><img src="asset/img/question.svg" width="40px"><p>Qui sommes nous ?</p></a>
-            <a href="#"><img src="asset/img/envelope.svg" width="40px"><p>Nous contacter</p></a>
-            <a href="#"><img src="asset/img/user.svg" width="40px"><p>Connexion / inscription</p></a>
+            <a class="active" href="#"><img src="asset/img/home.png" width="30px"><p>Accueil</p></a>
+            <a href="#"><img src="asset/img/question.png" width="30px"><p>Qui sommes nous ?</p></a>
+            <a href="#"><img src="asset/img/envelope.png" width="30px"><p>Nous contacter</p></a>
+            <a href="#"><img src="asset/img/user.png" width="30px"><p>Connexion / inscription</p></a>
         </div>
     </div>
 
