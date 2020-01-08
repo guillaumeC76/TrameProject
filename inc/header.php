@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="asset/css/style.css">
     <title>TrameProyect</title>
 
@@ -13,10 +14,10 @@
 
     <div class="menufixed">
         <div class="icon-bar">
-            <a class="active" href="#"><img src="asset/img/home.png" width="30px"><p>Accueil</p></a>
-            <a href="#"><img src="asset/img/question.png" width="30px"><p>Qui sommes nous ?</p></a>
-            <a href="#"><img src="asset/img/envelope.png" width="30px"><p>Nous contacter</p></a>
-            <a href="#"><img src="asset/img/user.png" width="30px"><p>Connexion / inscription</p></a>
+            <a class="active" href="index.php"><img src="asset/img/home.png" id="home"><p>Accueil</p></a>
+            <a href="#premier"><img src="asset/img/question.png" id="question"><p>Qui sommes nous ?</p></a>
+            <a href="#deuxieme"><img src="asset/img/envelope.png" id="contact"><p>Contactez nous</p></a>
+            <a href="#"><img src="asset/img/user.png" id="user"><p>Connexion / Inscription</p></a>
         </div>
     </div>
 
