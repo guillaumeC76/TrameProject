@@ -26,3 +26,23 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
 }
+
+
+/* window.onscroll = function() {scrollFunction()};
+
+ function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("menu").style.padding = "30px 10px";
+        document.getElementById("home").style.fontSize = "25px";
+        document.getElementById("question").style.fontSize = "25px";
+        document.getElementById("contact").style.fontSize = "25px";
+        document.getElementById("user").style.fontSize = "25px";
+    } else {
+        document.getElementById("menu").style.padding = "80px 10px";
+        document.getElementById("home").style.fontSize = "35px";
+        document.getElementById("question").style.fontSize = "35px";
+        document.getElementById("contact").style.fontSize = "35px";
+        document.getElementById("user").style.fontSize = "35px";
+
+    }
+} */
