@@ -392,15 +392,7 @@ $contact = $query->fetchAll();
                       <th>created_at</th>
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>id</th>
-                      <th>pseudo</th>
-                      <th>email</th>
-                      <th>role</th>
-                      <th>created_at</th>
-                    </tr>
-                  </tfoot>
+
                   <tbody>
                   <?php
                   echo '<tr>';
@@ -435,16 +427,7 @@ $contact = $query->fetchAll();
                                 <th>message</th>
                             </tr>
                             </thead>
-                            <tfoot>
-                            <tr>
-                                <th>id</th>
-                                <th>nom</th>
-                                <th>prenom</th>
-                                <th>email</th>
-                                <th>objet</th>
-                                <th>message</th>
-                            </tr>
-                            </tfoot>
+
                             <tbody>
                             <?php
                             echo '<tr>';
