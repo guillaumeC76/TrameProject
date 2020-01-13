@@ -80,41 +80,109 @@ header .menufixed {
 
 
 
-#qui {
-    margin-top: 100px;
+#qui h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3vw;
+    margin: 100px 0;
 }
 
-.avatar {
+#qui .avatarEtLogo {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#qui .avatar {
     height: 100px;
     width: 100px;
     border-radius: 50%;
 }
 
-#qui .barreVertical {
-    width: 5px;
-    background-color: black;
-    height: 520px;
+#qui .imgAvatar {
     float: left;
-    margin-top: 25px;
-    border-radius: 100px;
-    margin-left: 9.5%;
-    margin-right: 5%;
+    margin: 0 5%;
 }
 
-#qui h2 {
+#qui .imgAvatar p {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+#qui .avatar1 {
+    margin-left: 6%;
+}
+
+#qui .logicielMaitrise {
     text-transform: uppercase;
     text-align: center;
-    font-size: 3vw;
-    margin: 50px 0;
+    font-size: 2vw;
+    margin-bottom: 60px;
+    margin-top: 40px;
 }
 
-#responsive_headline{
-    font-size: 30px;
+#qui .logoLogiciel {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#qui .logo{
+    height: 70px;
+    width: 70px;
+    margin: 20px 3%;
+}
+
+#qui .logo1 {
+    height: 70px;
+    width: 90px;
+    margin: 20px 3%;
+}
+
+#qui .logo2 {
+    height: 70px;
+    width: 110px;
+    margin: 20px 3%;
+}
+
+#qui .logo3 {
+    height: 70px;
+    width: 120px;
+    margin: 20px 3%;
+}
+
+#qui .logoLogiciel {
+    float: left;
+}
+
+.espace {
+    margin-bottom: 40px;
+}
+
+
+#qui .barreVertical {
+    width: 5px;
+    height: 520px;
+    background-color: black;
+    border-radius: 100px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 2%;
 }
 
 #qui .text {
-    margin: 0 50px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.2vw;
+    margin-top: 20px;
+    width: 46%;
+    line-height: 40px;
 }
+
+#qui .text .italic {
+    font-style: oblique;
+}
+
 
 
 /*//////////////////////////////////
@@ -188,7 +256,7 @@ h4{
     text-transform: uppercase;
     font-size: 1.4em;
     background-color: black;
-    margin: 80px 35.4%;
+    margin: 80px 32.5%;
 }
 
 
