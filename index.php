@@ -57,17 +57,51 @@ include('inc/header.php'); ?>
 
 
 <section id="qui">
-    <img src="asset/img/samuel.jpg" alt="Photo de Samuel (Mr. Propre)" class="avatar">
-    <img src="asset/img/guillaume.png" alt="Photo de Guillaume" class="avatar">
-    <img src="asset/img/benjamin.jpg" alt="Photo de Benjamin" class="avatar">
-    <img src="asset/img/samuel.jpg" alt="Photo de Thomas" class="avatar">
 
+    <h2>Qui somme nous ?</h2>
+
+    <div class="avatarEtLogo">
+        <div class="avatar1 imgAvatar">
+            <img src="asset/img/samuel.jpg" alt="Photo de Samuel (Mr. Propre)" class="avatar">
+            <p>Samuel<br>Lacaille</p>
+        </div>
+
+        <div class="imgAvatar">
+           <img src="asset/img/guillaume.png" alt="Photo de Guillaume" class="avatar">
+            <p>Guillaume<br>Colombel</p>
+        </div>
+
+        <div class="imgAvatar">
+           <img src="asset/img/benjamin.jpg" alt="Photo de Benjamin" class="avatar">
+            <p>Benjamin<br>Plesant</p>
+        </div>
+
+        <div class="imgAvatar">
+            <img src="asset/img/samuel.jpg" alt="Photo de Thomas" class="avatar">
+            <p>Samuel<br>Lacaille</p>
+        </div>
+
+        <div class="logoLogiciel">
+            <p class="logicielMaitrise">Logiciels maitrisés</p>
+
+            <div class="logoImg">
+                <img src="asset/img/html.png" alt="Logo de HTML" class="logo">
+                <img src="asset/img/css.svg" alt="Logo de CSS" class="logo">
+                <img src="asset/img/php.png" alt="Logo de PHP" class="logo1">
+                <img src="asset/img/sql.png" alt="Logo de MySQL" class="logo2">
+                <img src="asset/img/js.png" alt="Logo de JavaScript" class="logo3">
+            </div>
+            <div class="espace"></div>
+        </div>
+    </div>
 
     <div class="barreVertical"></div>
 
-    <h2>Qui somme nous ?</h2>
+
     <div class="text">
-    <p id="responsive_headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias delectus dolor esse exercitationem fuga laboriosam laborum officiis quas quia, ratione rem vel. A alias animi at autem corporis cum deserunt ducimus error eum ex excepturi expedita illo inventore iure laborum libero magni, minus molestiae nam officiis possimus quaerat quidem quisquam reiciendis repellendus repudiandae, sequi tempora temporibus, tenetur velit! Ipsam itaque iure nostrum nulla perspiciatis!</p>
+        <p>Nous sommes des élèves de la Nfactory School en première année Bachelor. Notre projet était de créer un site web sur les trames réseaux. L'objectif est <span class="italic">d' analyser des trames réseaux et les transmettre sous forme de statistique</span> beaucoup plus clair et plus compréhenssible.</p><br>
+        <p>Nous étions 4 pour réaliser ce projet dans un temps impartie de 2 semaines. Nous sommes des développeurs en développement, c'est notre seul devise. Pour plus d'information contactez nous par mail juste en dessous. Sinon, pour devenir admin et pouvoir acceder à la totalité du contenue et snifer à volonter inscrivez-vous et cennectez-vous.</p><br>
+        <p>Toute l'équipe vous remercie.</p>
     </div>
     <div class="clear"></div>
 </section>
