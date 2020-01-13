@@ -30,8 +30,8 @@
         <div class="menufixed">
             <div class="icon-bar" id="responsive_headline">
                 <a class="active" href="index.php"><img src="asset/img/home.png" id="home"><p>Accueil</p></a>
-                <a href="index.php#premier"><img src="asset/img/question.png" id="question"><p>TITRE 1</p></a>
-                <a href="index.php#deuxieme"><img src="asset/img/envelope.png" id="contact"><p>TITRE 2</p></a>
+                <a href="#"><img src="asset/img/question.png" id="question"><p>TITRE 1</p></a>
+                <a href="#"><img src="asset/img/envelope.png" id="contact"><p>TITRE 2</p></a>
                 <a href="deconnexion.php"><img src="asset/img/user.png" id="user"><p>Deconnexion</p></a>
             </div>
         </div>

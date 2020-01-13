@@ -84,10 +84,10 @@ header .menufixed {
     margin-top: 100px;
 }
 
-#qui img {
-    float: left;
-    width: 40%;
-    display: inline-block;
+.avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
 }
 
 #qui .barreVertical {

@@ -57,14 +57,17 @@ include('inc/header.php'); ?>
 
 
 <section id="qui">
-    <div class="clear"></div>
-    <img src="asset/img/question.svg" alt="Point d'intérogation">
+    <img src="asset/img/samuel.jpg" alt="Photo de Samuel (Mr. Propre)" class="avatar">
+    <img src="asset/img/guillaume.png" alt="Photo de Guillaume" class="avatar">
+    <img src="asset/img/benjamin.jpg" alt="Photo de Benjamin" class="avatar">
+    <img src="asset/img/samuel.jpg" alt="Photo de Thomas" class="avatar">
+
 
     <div class="barreVertical"></div>
 
     <h2>Qui somme nous ?</h2>
     <div class="text">
-    <p id="responsive_headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias delectus dolor esse exercitationem fuga laboriosam laborum officiis quas quia, ratione rem vel. A alias animi at autem corporis cum deserunt ducimus error eum ex excepturi expedita illo inventore iure laborum libero magni, minus molestiae nam officiis possimus quaerat quidem quisquam reiciendis repellendus repudiandae, sequi tempora temporibus, tenetur velit! Ipsam itaque iure nostrum nulla perspiciatis! Adipisci amet assumenda doloremque eos in labore odit quae quas quasi sed! Ab aliquid expedita id itaque, laudantium provident? Alias consequatur deserunt dolor excepturi hic illo ipsa modi qui totam. Minus molestiae quae repudiandae vero.</p>
+    <p id="responsive_headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias delectus dolor esse exercitationem fuga laboriosam laborum officiis quas quia, ratione rem vel. A alias animi at autem corporis cum deserunt ducimus error eum ex excepturi expedita illo inventore iure laborum libero magni, minus molestiae nam officiis possimus quaerat quidem quisquam reiciendis repellendus repudiandae, sequi tempora temporibus, tenetur velit! Ipsam itaque iure nostrum nulla perspiciatis!</p>
     </div>
     <div class="clear"></div>
 </section>
