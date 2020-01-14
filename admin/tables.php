@@ -95,10 +95,10 @@ if (!empty($_POST['submitted'])) {
     }
 }
 
-
-/*$i = 0;
-$sql = "DELETE FROM users
-WHERE id =  $user[$i]";
+/*
+$i = 0;
+$sql = DELETE FROM users
+WHERE id =  $id ;
 */
 
 

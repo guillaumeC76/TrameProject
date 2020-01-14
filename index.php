@@ -35,6 +35,8 @@ if (!empty($_POST['submit'])) {
     }
 }
 
+debug($_SESSION['login']);
+
 include('inc/header.php'); ?>
 
 <div class="diapo">
