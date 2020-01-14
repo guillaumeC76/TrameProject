@@ -69,7 +69,7 @@ if (!empty($_POST['submitted'])) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>SB Admin 2 - Connexion</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -110,12 +110,12 @@ if (!empty($_POST['submitted'])) {
                     <a href="index.html" class="btn btn-primary btn-user btn-block" name="submitted">
                       Connexion
                     </a>
-                    <hr>
+
 
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">Mot de passe oublié ?</a>
+                    <a class="small" href="forgot-password.php">Mot de passe oublié ?</a>
                   </div>
 
                 </div>

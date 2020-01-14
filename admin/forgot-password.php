@@ -1,3 +1,60 @@
+<?php
+include ('../inc/function.php');
+include ('../inc/pdo.php');
+$title = 'Modifier votre mot de passe';
+$errors = array();
+
+if (!empty($_GET['token']) && !empty($_GET['email'])) {
+
+    $token = clean($_GET['token']);
+    $email = clean($_GET['email']);
+
+    $token = $_GET['token'];
+    $email = $_GET['email'];
+    $email = urldecode($email);
+    $sql = "SELECT * FROM users where token = :token AND email = :email";
+    $query = $pdo->prepare($sql);
+$query->bindValue(':token', $token, PDO::PARAM_STR);
+$query->bindValue(':email', $email, PDO::PARAM_STR);
+$query->execute();
+$user = $query->fetch();
+
+if (!empty($user)) {
+if (!empty($_POST['submitted'])) {
+// 3 - Password
+$password1 = trim(strip_tags($_POST['password1']));
+$password2 = trim(strip_tags($_POST['password2']));
+if (!empty($password1)) {
+if ($password1 != $password2) {
+$errors['password'] = 'Vos mots de passe doivent être identiques';
+} elseif (mb_strlen($password1) <= 5) {
+$errors['password'] = 'Le mot de passe doit contenir minimum 6 caractères';
+}
+} else {
+$errors['password'] = 'Veuillez renseigner un mot de passe';
+}
+if (count($errors) == 0) {
+// Password Hasher
+$hashPassword = password_hash($password1, PASSWORD_BCRYPT);
+$token = generatorToken(120);
+$sql = "UPDATE users SET password = :password, token = :token WHERE email = :email";
+$query = $pdo->prepare($sql);
+$query->bindValue(':token', $token, PDO::PARAM_STR);
+$query->bindValue(':email', $email, PDO::PARAM_STR);
+$query->bindValue(':password', $hashPassword, PDO::PARAM_STR);
+$query->execute();
+
+header('Location: login.php');
+}
+}
+} else {
+header('404.php');
+}
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +66,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Forgot Password</title>
+  <title>SB Admin 2 - Mot de passe oublié</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -37,23 +94,23 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
-                    <p class="mb-4">We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!</p>
+                    <h1 class="h4 text-gray-900 mb-2">Mot de passe oublié ?</h1>
+
                   </div>
                   <form class="user">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Adresse Email...">
                     </div>
                     <a href="login.php" class="btn btn-primary btn-user btn-block">
-                      Reset Password
+                      Réinitialiser mot de passe
                     </a>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
+                    <a class="small" href="register.php">Créer un compte!</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="login.php">Already have an account? Login!</a>
+                    <a class="small" href="login.php">Déjà un compte ? Connexion !</a>
                   </div>
                 </div>
               </div>
