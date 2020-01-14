@@ -68,8 +68,9 @@ header .menufixed {
 
 
 .diapo {
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 100px;
 }
 
@@ -257,6 +258,7 @@ h4{
     font-size: 1.4em;
     background-color: black;
     margin: 80px 32.5%;
+    transition: all 0.5s;
 }
 
 
@@ -265,6 +267,7 @@ h4{
     background-color: white;
     border: 2px solid black;
     color: black;
+    transition: all 0.5s;
 }
 
 .formpage span {
@@ -343,5 +346,126 @@ h6 {
     color: white;
     margin-bottom: 60px;
     text-transform: uppercase;
+}
+
+
+
+
+/*//////////////////////////////////
+               RESPONSIVE
+//////////////////////////////////*/
+
+
+
+
+@media screen and (max-width: 1439px) {
+
+    #qui h2 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 4vw;
+        margin: 100px 0;
+    }
+
+    #qui .avatarEtLogo {
+        width: 100%;
+    }
+
+    #qui .avatar {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+
+    .avatarSeul {
+        width: 100%;
+    }
+
+    #qui .imgAvatar {
+        float: left;
+        width: 14%;
+    }
+
+    #qui .imgAvatar img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #qui .imgAvatar p {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 70px;
+    }
+
+    #qui .avatar1 {
+        margin-left: 6%;
+    }
+
+    #qui .logicielMaitrise {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 4vw;
+        margin-bottom: 60px;
+        margin-top: 40px;
+    }
+
+    #qui .logoLogiciel {
+        width: 100%;
+    }
+
+    #qui .logo{
+        height: 70px;
+        width: 70px;
+        margin: 20px 2%;
+    }
+
+    #qui .logo1 {
+        height: 70px;
+        width: 90px;
+        margin: 20px 2%;
+    }
+
+    #qui .logo2 {
+        height: 70px;
+        width: 110px;
+        margin: 20px 2%;
+    }
+
+    #qui .logo3 {
+        height: 70px;
+        width: 120px;
+        margin: 20px 2%;
+    }
+
+    #qui .logoLogiciel {
+        float: left;
+    }
+
+    .espace {
+        margin-bottom: 40px;
+    }
+
+
+    #qui .barreVertical {
+        width: 5px;
+        height: 520px;
+        background-color: black;
+        border-radius: 100px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 2%;
+    }
+
+
+    #qui .barreVertical {
+        height: 0.01px;
+    }
+
+    #qui .text {
+        font-size: 3vw;
+        margin-top: 20px;
+        width: 100%;
+        line-height: 40px;
+    }
 }
 

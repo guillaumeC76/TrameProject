@@ -61,24 +61,26 @@ include('inc/header.php'); ?>
     <h2>Qui somme nous ?</h2>
 
     <div class="avatarEtLogo">
-        <div class="avatar1 imgAvatar">
-            <img src="asset/img/samuel.jpg" alt="Photo de Samuel (Mr. Propre)" class="avatar">
-            <p>Samuel<br>Lacaille</p>
-        </div>
+        <div class="avatarSeul">
+            <div class="avatar1 imgAvatar">
+                <img src="asset/img/samuel.jpg" alt="Photo de Samuel (Mr. Propre)" class="avatar">
+                <p>Samuel<br>Lacaille</p>
+            </div>
 
-        <div class="imgAvatar">
-           <img src="asset/img/guillaume.png" alt="Photo de Guillaume" class="avatar">
-            <p>Guillaume<br>Colombel</p>
-        </div>
+            <div class="imgAvatar">
+               <img src="asset/img/guillaume.png" alt="Photo de Guillaume" class="avatar">
+                <p>Guillaume<br>Colombel</p>
+            </div>
 
-        <div class="imgAvatar">
-           <img src="asset/img/benjamin.jpg" alt="Photo de Benjamin" class="avatar">
-            <p>Benjamin<br>Plesant</p>
-        </div>
+            <div class="imgAvatar">
+               <img src="asset/img/benjamin.jpg" alt="Photo de Benjamin" class="avatar">
+                <p>Benjamin<br>Plesant</p>
+            </div>
 
-        <div class="imgAvatar">
-            <img src="asset/img/samuel.jpg" alt="Photo de Thomas" class="avatar">
-            <p>Samuel<br>Lacaille</p>
+            <div class="imgAvatar">
+                <img src="asset/img/samuel.jpg" alt="Photo de Thomas" class="avatar">
+                <p>Samuel<br>Lacaille</p>
+            </div>
         </div>
 
         <div class="logoLogiciel">
