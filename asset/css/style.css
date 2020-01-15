@@ -21,7 +21,7 @@ header {
 
 .icon-bar {
     width: 100%;
-    background-color: #A0D5E8;
+    background-color: #25313C;
     overflow: auto;
 }
 
@@ -71,7 +71,7 @@ header .menufixed {
 
 .icon-bar2 {
     width: 100%;
-    background-color: #A0D5E8;
+    background-color: #25313C;
     overflow: auto;
 }
 
@@ -130,6 +130,14 @@ header .menufixed2 {
 //////////////////////////////////*/
 
 
+
+
+
+#qui {
+    background-color: #25313C;
+    padding: 30px 0;
+    color: white;
+}
 
 #qui h2 {
     text-transform: uppercase;
@@ -214,7 +222,7 @@ header .menufixed2 {
 #qui .barreVertical {
     width: 5px;
     height: 520px;
-    background-color: black;
+    background-color: white;
     border-radius: 100px;
     display: inline-block;
     vertical-align: top;
@@ -245,7 +253,7 @@ header .menufixed2 {
 
 h3 {
     text-align: center;
-    margin: 200px 0 70px 0;
+    margin: 140px 0 70px 0;
     font-size: 2.5em;
     text-transform: uppercase;
 }
@@ -259,7 +267,7 @@ h3 {
 
 h4{
     text-align: center;
-    margin: 70px 0;
+    margin: 20px 0 70px 0;
     font-size: 1.5em;
 }
 
@@ -306,7 +314,7 @@ h4{
     text-align: center;
     text-transform: uppercase;
     font-size: 1.4em;
-    background-color: black;
+    background-color: #25313C;
     margin: 80px 32.5%;
     transition: all 0.5s;
 }
@@ -338,7 +346,7 @@ h4{
 
 
 footer {
-    background-color: black;
+    background-color: #25313C;
     padding: 30px 0;
 }
 
