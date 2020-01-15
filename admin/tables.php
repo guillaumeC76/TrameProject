@@ -91,17 +91,19 @@ if (!empty($_POST['submitted'])) {
         $success = true;
 
 
+
+
         header('Location: tables.php');
     }
 }
-
 /*
-$i = 0;
-$sql = DELETE FROM users
-WHERE id =  $id ;
-*/
+if (!empty($_POST['delete'])) {
 
-
+    $sql = "DELETE FROM contact WHERE  id = $contact[$i]['id'] ";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    header('Location: tables.php');
+} */
 ?>
 
 
@@ -237,12 +239,7 @@ WHERE id =  $id ;
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 
-                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
 
-                    <!-- Nav Item - Alerts -->
-
-
-                    <!-- Nav Item - Messages -->
 
 
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -307,7 +304,7 @@ WHERE id =  $id ;
                                     echo '<td>' . $user[$i]['email'] . '</td>';
                                     echo '<td>' . $user[$i]['role'] . '</td>';
                                     echo '<td>' . $user[$i]['created_at'] . '</td>';
-                                    echo '<td>' .'<a href="tables.php" >' . '<img src="img/delete.png"' .'</a>'.'</td>';
+                                    echo '<td><a href="tables.php?id=' . $user[$i]['id'] .'" >' . '<img src="img/delete.png"' .'</a>'.'</td>';
                                     echo '</tr>';
                                 }
                                 ?>
@@ -347,8 +344,6 @@ WHERE id =  $id ;
 
                                 <h3>Modifier un utilisateur : </h3>
 
-
-                            </div>
                         </div>
                     </div>
                     <div class="card shadow mb-4">
@@ -366,12 +361,14 @@ WHERE id =  $id ;
                                         <th>email</th>
                                         <th>objet</th>
                                         <th>message</th>
+                                        <th>supprimer</th>
                                     </tr>
                                     </thead>
 
                                     <tbody>
                                     <?php
-                                    echo '<tr>';
+                                    echo '<tr>'; ?>
+                                    <form action="tables.php" method="post"> <?php
                                     for ($i = 0; $i < count($contact); $i++) {
                                         echo '<td>' . $contact[$i]['id'] . '</td>';
                                         echo '<td>' . $contact[$i]['nom'] . '</td>';
@@ -379,12 +376,13 @@ WHERE id =  $id ;
                                         echo '<td>' . $contact[$i]['email'] . '</td>';
                                         echo '<td>' . $contact[$i]['objet'] . '</td>';
                                         echo '<td>' . $contact[$i]['message'] . '</td>';
+                                        echo '<td>' . '<input type="submit" name="delete" value="supprimer">'.'</td>';
+                                     //   echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'" >' . '<img src="img/delete.png"' .'</a>'.'</td>';
                                         echo '</tr>';
                                     }
                                     ?>
                                     </tbody>
                                 </table>
-                                <h3>Supprimer un message : </h3>
                             </div>
                         </div>
                     </div>
