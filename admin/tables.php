@@ -30,6 +30,7 @@ if (!empty($_POST['submitted'])) {
     $email = trim(strip_tags($_POST['email']));
     $password1 = trim(strip_tags($_POST['password1']));
     $password2 = trim(strip_tags($_POST['password2']));
+    $role = trim(strip_tags($_POST['role']));
 
     // Validation de chaque champs
     // 1 - Pseudo
@@ -96,14 +97,20 @@ if (!empty($_POST['submitted'])) {
         header('Location: tables.php');
     }
 }
-/*
-if (!empty($_POST['delete'])) {
 
-    $sql = "DELETE FROM contact WHERE  id = $contact[$i]['id'] ";
+if (!empty($_POST['delete'])) {
+    $id = $_POST['id'];
+
+   $sql = "DELETE FROM contact WHERE  id = '$id'";
     $query = $pdo->prepare($sql);
+    $query->bindParam(':id', $id);
     $query->execute();
+
     header('Location: tables.php');
-} */
+
+}
+
+
 ?>
 
 
@@ -332,7 +339,7 @@ if (!empty($_POST['delete'])) {
                                         <th>email</th>
                                         <th>objet</th>
                                         <th>message</th>
-                                        <th>supprimer</th>
+
                                     </tr>
                                     </thead>
 
@@ -347,9 +354,11 @@ if (!empty($_POST['delete'])) {
                                         echo '<td>' . $contact[$i]['email'] . '</td>';
                                         echo '<td>' . $contact[$i]['objet'] . '</td>';
                                         echo '<td>' . $contact[$i]['message'] . '</td>';
-                                        echo '<td>' . '<input type="submit" name="delete" value="supprimer">'.'</td>';
-                                     //   echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'" >' . '<img src="img/delete.png"' .'</a>'.'</td>';
+                                       // echo '<td>' . '<input type="submit" name="delete" value="supprimer">'.'</td>';
+                                        echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'">' . '<img src="img/delete.png"' .'</a>' .'</td>'; ?>
+                                    </form> <?php
                                         echo '</tr>';
+                                    debug($contact[$i]);
                                     }
                                     ?>
                                     </tbody>
