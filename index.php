@@ -35,7 +35,7 @@ if (!empty($_POST['submit'])) {
     }
 }
 
-debug($_SESSION['login']);
+debug($_SESSION['login']['role']);
 
 include('inc/header.php'); ?>
 

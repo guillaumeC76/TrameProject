@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <?php }  elseif ($_SESSION['login']) { ?>
+    <?php }  elseif ($_SESSION['login']['role'] == "admin") { ?>
 
         <div class="menufixed">
             <div class="icon-bar" id="responsive_headline">
