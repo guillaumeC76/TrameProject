@@ -1,3 +1,5 @@
+<?php header('Location: tables.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 

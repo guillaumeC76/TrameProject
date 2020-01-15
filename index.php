@@ -53,10 +53,9 @@ include('inc/header.php'); ?>
         </li>
     </ul>
 </div>
-    <span id="premier"></span>
 </div>
 
-
+    <span id="premier"></span>
 
 <section id="qui">
 
@@ -108,11 +107,12 @@ include('inc/header.php'); ?>
         <p>Toute l'équipe vous remercie.</p>
     </div>
     <div class="clear"></div>
+    <span id="deuxieme"></span>
 </section>
 
 
 
-<span id="deuxieme"></span>
+
 <h3>Nous contacter</h3>
 <div class="bar"></div>
 <h4>Envoyez votre message ici</h4>
