@@ -146,6 +146,14 @@ header .menufixed2 {
     margin: 100px 0;
 }
 
+#qui h2 span {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3vw;
+    margin: 100px 0;
+    color: #9aa3ff;
+}
+
 #qui .avatarEtLogo {
     width: 48%;
     display: inline-block;
@@ -357,6 +365,10 @@ footer p {
 
 footer p a {
     color: white;
+}
+
+footer p a:hover {
+    color: #9aa3ff;
 }
 
 
