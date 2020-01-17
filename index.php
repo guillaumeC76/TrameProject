@@ -86,7 +86,7 @@ include('inc/header.php'); ?>
         </div>
 
         <div class="logoLogiciel">
-            <p class="logicielMaitrise">Logiciels maitrisés</p>
+            <p class="logicielMaitrise">Languages maitrisés</p>
 
             <div class="logoImg">
                 <img src="asset/img/html.png" alt="Logo de HTML" class="logo">
