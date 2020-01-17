@@ -60,7 +60,7 @@ include('inc/header.php'); ?>
 <section id="qui">
     <span id="premier"></span>
 
-    <h2>Qui somme nous ?</h2>
+    <h2><span>Qui</span> somme nous ?</h2>
 
     <div class="avatarEtLogo">
         <div class="avatarSeul">
