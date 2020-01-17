@@ -30,6 +30,7 @@ if (!empty($_POST['submitted'])) {
     $email = trim(strip_tags($_POST['email']));
     $password1 = trim(strip_tags($_POST['password1']));
     $password2 = trim(strip_tags($_POST['password2']));
+    $role = trim(strip_tags($_POST['role']));
 
     // Validation de chaque champs
     // 1 - Pseudo
@@ -96,14 +97,30 @@ if (!empty($_POST['submitted'])) {
         header('Location: tables.php');
     }
 }
-/*
-if (!empty($_POST['delete'])) {
 
-    $sql = "DELETE FROM contact WHERE  id = $contact[$i]['id'] ";
+if (!empty($_POST['deleteUser'])) {
+    $i=0;
+    $id = $user[$i]['id'];
+    $sql = "DELETE FROM users WHERE  id = $id ";
     $query = $pdo->prepare($sql);
     $query->execute();
-    header('Location: tables.php');
-} */
+
+    // header('Location: tables.php');
+
+}
+
+
+if (!empty($_POST['delete'])) {
+    $i=0;
+    $id = $contact[$i]['id'];
+        $sql = "DELETE FROM contact WHERE  id = $id ";
+        $query = $pdo->prepare($sql);
+        $query->execute();
+
+        // header('Location: tables.php');
+
+   }
+
 ?>
 
 
@@ -147,29 +164,10 @@ if (!empty($_POST['delete'])) {
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3"> Admin</div>
         </a>
 
 
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-               aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
-            </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.php">Connexion</a>
-                    <a class="collapse-item" href="register.php">Register</a>
-                    <a class="collapse-item" href="forgot-password.php">Mot de passe oublié</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Autres Pages:</h6>
-                    <a class="collapse-item" href="404.php">Page 404</a>
-                </div>
-            </div>
-        </li>
 
 
         <!-- Nav Item - Tables -->
@@ -230,7 +228,7 @@ if (!empty($_POST['delete'])) {
 
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Déconnexion
+                                Retour au site
                             </a>
                         </div>
                     </li>
@@ -268,14 +266,16 @@ if (!empty($_POST['delete'])) {
 
                                 <tbody>
                                 <?php
-                                echo '<tr>';
+                                echo '<tr>'; ?>
+                                <form action="tables.php"  method="post"> <?php
                                 for ($i = 0; $i < count($user); $i++) {
                                     echo '<td>' . $user[$i]['id'] . '</td>';
                                     echo '<td>' . $user[$i]['pseudo'] . '</td>';
                                     echo '<td>' . $user[$i]['email'] . '</td>';
                                     echo '<td>' . $user[$i]['role'] . '</td>';
                                     echo '<td>' . $user[$i]['created_at'] . '</td>';
-                                    echo '<td><a href="tables.php?id=' . $user[$i]['id'] .'" >' . '<img src="img/delete.png"' .'</a>'.'</td>';
+                                    echo '<td>' . '<input type="submit" name="deleteUser" id="' . $user[$i]['id'] . '" value="supprimer ' . $user[$i]['id'] . '">'.'</td>'; ?>
+                                    </form> <?php
                                     echo '</tr>';
                                 }
                                 ?>
@@ -332,14 +332,14 @@ if (!empty($_POST['delete'])) {
                                         <th>email</th>
                                         <th>objet</th>
                                         <th>message</th>
-                                        <th>supprimer</th>
+
                                     </tr>
                                     </thead>
 
                                     <tbody>
                                     <?php
                                     echo '<tr>'; ?>
-                                    <form action="tables.php" method="post"> <?php
+                                    <form action="tables.php" name="deleteLine" method="post"> <?php
                                     for ($i = 0; $i < count($contact); $i++) {
                                         echo '<td>' . $contact[$i]['id'] . '</td>';
                                         echo '<td>' . $contact[$i]['nom'] . '</td>';
@@ -347,9 +347,11 @@ if (!empty($_POST['delete'])) {
                                         echo '<td>' . $contact[$i]['email'] . '</td>';
                                         echo '<td>' . $contact[$i]['objet'] . '</td>';
                                         echo '<td>' . $contact[$i]['message'] . '</td>';
-                                        echo '<td>' . '<input type="submit" name="delete" value="supprimer">'.'</td>';
-                                     //   echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'" >' . '<img src="img/delete.png"' .'</a>'.'</td>';
+                                        echo '<td>' . '<input type="submit" name="delete" id="' . $contact[$i]['id'] . '" value="supprimer ' . $contact[$i]['id'] . '">'.'</td>';
+                                      //  echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'">' . '<img src="img/delete.png"' .'</a>' .'</td>'; ?>
+                                    </form> <?php
                                         echo '</tr>';
+                                   // debug($contact[$i]['id']);
                                     }
                                     ?>
                                     </tbody>
@@ -367,7 +369,7 @@ if (!empty($_POST['delete'])) {
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Trameproyect 2020</span>
+                        <span>Copyright &copy; TrameProyect 2020</span>
                     </div>
                 </div>
             </footer>
@@ -390,15 +392,15 @@ if (!empty($_POST['delete'])) {
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Prêt pour partir ?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> Administrateur </h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Etes-vous sur de vouloir quitter ?</div>
+                <div class="modal-body">Etes-vous sur de vouloir quitter cette page ?</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-                    <a class="btn btn-primary" href="login.php">déconnexion</a>
+                    <a class="btn btn-primary" href="../index.php">retour au site</a>
                 </div>
             </div>
         </div>
