@@ -111,7 +111,7 @@ if (!empty($_POST['deleteUser'])) {
 
 
 if (!empty($_POST['delete'])) {
-    $i=0;
+    $i= 0;
     $id = $contact[$i]['id'];
         $sql = "DELETE FROM contact WHERE  id = $id ";
         $query = $pdo->prepare($sql);
