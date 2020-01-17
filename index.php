@@ -18,7 +18,7 @@ if (!empty($_POST['submit'])) {
 
     $errors = textValid($errors, $nom, 'nom',2, 150);
     $errors = textValid($errors, $prenom, 'prenom',2, 150);
-    $errors = emailValid($errors, $email, 'email',5,220);
+    $errors = emailValid($errors, $email, 'email');
     $errors = textValid($errors, $objet, 'objet',3, 200);
     $errors = textValid($errors, $message, 'message',10,4000);
 
