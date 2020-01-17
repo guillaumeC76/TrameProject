@@ -99,17 +99,15 @@ if (!empty($_POST['submitted'])) {
 }
 
 if (!empty($_POST['delete'])) {
-    $id = $_POST['id'];
+    $i=0;
+    $id = $contact[$i]['id'];
+        $sql = "DELETE FROM contact WHERE  id = $id ";
+        $query = $pdo->prepare($sql);
+        $query->execute();
 
-   $sql = "DELETE FROM contact WHERE  id = '$id'";
-    $query = $pdo->prepare($sql);
-    $query->bindParam(':id', $id);
-    $query->execute();
+        // header('Location: tables.php');
 
-    header('Location: tables.php');
-
-}
-
+   }
 
 ?>
 
@@ -346,7 +344,7 @@ if (!empty($_POST['delete'])) {
                                     <tbody>
                                     <?php
                                     echo '<tr>'; ?>
-                                    <form action="tables.php" method="post"> <?php
+                                    <form action="tables.php" name="deleteLine" method="post"> <?php
                                     for ($i = 0; $i < count($contact); $i++) {
                                         echo '<td>' . $contact[$i]['id'] . '</td>';
                                         echo '<td>' . $contact[$i]['nom'] . '</td>';
@@ -354,11 +352,11 @@ if (!empty($_POST['delete'])) {
                                         echo '<td>' . $contact[$i]['email'] . '</td>';
                                         echo '<td>' . $contact[$i]['objet'] . '</td>';
                                         echo '<td>' . $contact[$i]['message'] . '</td>';
-                                       // echo '<td>' . '<input type="submit" name="delete" value="supprimer">'.'</td>';
-                                        echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'">' . '<img src="img/delete.png"' .'</a>' .'</td>'; ?>
+                                        echo '<td>' . '<input type="submit" name="delete" id="' . $contact[$i]['id'] . '" value="supprimer ' . $contact[$i]['id'] . '">'.'</td>';
+                                      //  echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'">' . '<img src="img/delete.png"' .'</a>' .'</td>'; ?>
                                     </form> <?php
                                         echo '</tr>';
-                                    debug($contact[$i]);
+                                    debug($contact[$i]['id']);
                                     }
                                     ?>
                                     </tbody>
