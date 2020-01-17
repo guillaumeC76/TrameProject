@@ -58,7 +58,7 @@ include ('inc/header.php'); ?>
 
 <h1>Modifier votre mot de passe</h1>
 
-<form action="" method="post">
+<form action="" method="post" class="inscri">
 
     <label for="password1">Nouveau mot de passe</label>
     <input type="password" name="password1" id="password1" value="">
@@ -67,7 +67,7 @@ include ('inc/header.php'); ?>
     <label for="password2">Confirmez votre nouveaux mot de passe</label>
     <input type="password" name="password2" id="password2" value="">
 
-    <input type="submit" name="submitted" value="">
+    <input type="submit" name="submitted" value="Modifier">
 
 </form>
 
