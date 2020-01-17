@@ -98,6 +98,18 @@ if (!empty($_POST['submitted'])) {
     }
 }
 
+if (!empty($_POST['deleteUser'])) {
+    $i=0;
+    $id = $user[$i]['id'];
+    $sql = "DELETE FROM users WHERE  id = $id ";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+
+    // header('Location: tables.php');
+
+}
+
+
 if (!empty($_POST['delete'])) {
     $i=0;
     $id = $contact[$i]['id'];
@@ -273,14 +285,16 @@ if (!empty($_POST['delete'])) {
 
                                 <tbody>
                                 <?php
-                                echo '<tr>';
+                                echo '<tr>'; ?>
+                                <form action="tables.php"  method="post"> <?php
                                 for ($i = 0; $i < count($user); $i++) {
                                     echo '<td>' . $user[$i]['id'] . '</td>';
                                     echo '<td>' . $user[$i]['pseudo'] . '</td>';
                                     echo '<td>' . $user[$i]['email'] . '</td>';
                                     echo '<td>' . $user[$i]['role'] . '</td>';
                                     echo '<td>' . $user[$i]['created_at'] . '</td>';
-                                    echo '<td><a href="tables.php?id=' . $user[$i]['id'] .'" >' . '<img src="img/delete.png"' .'</a>'.'</td>';
+                                    echo '<td>' . '<input type="submit" name="deleteUser" id="' . $user[$i]['id'] . '" value="supprimer ' . $user[$i]['id'] . '">'.'</td>'; ?>
+                                    </form> <?php
                                     echo '</tr>';
                                 }
                                 ?>
@@ -356,7 +370,7 @@ if (!empty($_POST['delete'])) {
                                       //  echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'">' . '<img src="img/delete.png"' .'</a>' .'</td>'; ?>
                                     </form> <?php
                                         echo '</tr>';
-                                    debug($contact[$i]['id']);
+                                   // debug($contact[$i]['id']);
                                     }
                                     ?>
                                     </tbody>
