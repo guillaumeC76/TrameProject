@@ -80,8 +80,8 @@ include('inc/header.php'); ?>
             </div>
 
             <div class="imgAvatar">
-                <img src="asset/img/samuel.jpg" alt="Photo de Thomas" class="avatar">
-                <p>Samuel<br>Lacaille</p>
+                <img src="asset/img/avthomas.png" alt="Photo de Thomas" class="avatar">
+                <p>Thomas<br>Vasseur</p>
             </div>
         </div>
 
