@@ -60,7 +60,7 @@ include('inc/header.php'); ?>
 <section id="qui">
     <span id="premier"></span>
 
-    <h2><span>Qui</span> somme nous ?</h2>
+    <h2 class="tagline"><span>Qui</span> somme nous ?</h2>
 
     <div class="avatarEtLogo">
         <div class="avatarSeul">
@@ -113,47 +113,46 @@ include('inc/header.php'); ?>
 
     <span id="deuxieme"></span>
 
-<h3>Nous contacter</h3>
+<h3 class="headline">Nous contacter</h3>
 
 <div class="bar"></div>
-<h4>Envoyez votre message ici</h4>
+<h4 id="formulaireAncre">Envoyez votre message ici</h4>
     <section id="pagecontact"></section>
     <div class="formpage">
 
         <?php if($success) {
             header('Location: success.php');
         } else { ?>
-        <form class="" novalidate action="" method="post">
+        <form class="formulaireEffet" novalidate action="index.php#formulaireAncre" method="post">
 
             <div class="separation">
-                <input id="nom" type="text" name="nom" placeholder="Votre Nom" value="<?php if (!empty($_POST['nom'])) {echo $_POST['nom'];} ?>">
+                <input id="nom" type="text" name="nom" placeholder="Votre Nom" class="input1" value="<?php if (!empty($_POST['nom'])) {echo $_POST['nom'];} ?>">
                 <span class="error"><?php if(!empty($errors['nom'])) {echo $errors['nom']; }?></span>
             </div>
 
             <div class="separation">
-                <input id="prenom" type="text" name="prenom" placeholder="Prénom" value="<?php if (!empty($_POST['prenom'])) {echo $_POST['prenom'];} ?>">
+                <input id="prenom" type="text" name="prenom" placeholder="Prénom" class="input2" value="<?php if (!empty($_POST['prenom'])) {echo $_POST['prenom'];} ?>">
                 <span class="error"><?php if(!empty($errors['prenom'])) {echo $errors['prenom']; }?></span>
             </div>
 
             <div class="separation">
-                <input id="email" type="email" name="email" placeholder="Votre Email" value="<?php if (!empty($_POST['email'])) {echo $_POST['email'];} ?>">
+                <input id="email" type="email" name="email" placeholder="Votre Email" class="input3" value="<?php if (!empty($_POST['email'])) {echo $_POST['email'];} ?>">
                 <span class="error"><?php if(!empty($errors['email'])) {echo $errors['email']; }?></span>
                 </div>
 
             <div class="separation">
-                <input id="sujet" type="" name="objet" placeholder="Objet" value="<?php if (!empty($_POST['objet'])) {echo $_POST['objet'];} ?>">
+                <input id="sujet" type="" name="objet" placeholder="Objet" class="input4" value="<?php if (!empty($_POST['objet'])) {echo $_POST['objet'];} ?>">
                 <span class="error"><?php if(!empty($errors['objet'])) {echo $errors['objet']; }?></span>
             </div>
 
-            <textarea name="message" rows="8" cols="8" placeholder="Votre message ..."><?php if (!empty($_POST['message'])) {echo $_POST['message'];} ?></textarea>
+            <textarea name="message" rows="8" cols="8" class="input5" placeholder="Votre message ..."><?php if (!empty($_POST['message'])) {echo $_POST['message'];} ?></textarea>
             <span class="error"><?php if(!empty($errors['message'])) {echo $errors['message']; }?></span>
 
-            <input id="boutonenvoyer" type="submit" name="submit" value="Envoyer">
+            <input id="boutonenvoyer" type="submit" name="submit" class="input6" value="Envoyer" onclick="animation()">
         </form> <?php } ?>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
     <script src="asset/flexslider/jquery.flexslider.js"></script>
     <script src="asset/fontresponsiv/fontr.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>

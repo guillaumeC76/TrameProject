@@ -36,7 +36,6 @@
             </div>
         </div>
 
-        <li class="bienvenue">Bonjour <?php echo $_SESSION['login']['pseudo'] ?> !</li>
         <?php }else { ?>
     <div class="menufixed2">
         <div class="icon-bar2" id="responsive_headline">
@@ -46,7 +45,6 @@
         </div>
     </div>
 
-    <li class="bienvenue">Bonjour <?php echo $_SESSION['login']['pseudo'] ?> !</li>
     <?php }?>
 
 </header>
