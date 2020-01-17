@@ -121,7 +121,7 @@ include('inc/header.php'); ?>
     <div class="formpage">
 
         <?php if($success) {
-            header('Location: success.php');
+            echo '<p class="success">Votre message à bien été envoyé<br><a class="recharge" href="index.php">Recharger la page</a></p>';
         } else { ?>
         <form class="formulaireEffet" novalidate action="index.php#formulaireAncre" method="post">
 

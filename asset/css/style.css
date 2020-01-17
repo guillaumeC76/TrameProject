@@ -424,6 +424,25 @@ h6 {
     padding-top: 200px;
 }
 
+.success {
+    text-align: center;
+    margin-top: 80px;
+    color: #000000;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+.recharge {
+    color: #bf6153;
+}
+
+.recharge:hover {
+    color: #ff6942;
+}
+
+
+
 
 
 /*//////////////////////////////////
