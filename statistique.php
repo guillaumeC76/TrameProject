@@ -1,8 +1,8 @@
-<pre>
 <?php
 $fichier = file_get_contents('./files/capture.json');
 $json = json_decode($fichier, true);
 
+$datas = array();
 foreach ($json as $jisonne) {
     if (isset($jisonne["_source"])) {
         $jisonne = $jisonne['_source'];
@@ -35,28 +35,78 @@ foreach ($json as $jisonne) {
         } else {
             $protocole = "UDP";
         }
-        echo $date . ' ' . $protocole . ' ' . $ethSrc . ' - ' . $ethDst . '------------------------------' . $ipSrc . ' - ' . $ipDst . ' ' . $portSrc . ' ' . $portDst . "\n";
 
+        $datas[] = array(
+            'date' => $date,
+            'eth' => array(
+                'src' => $ethSrc,
+                'dst' => $ethDst
+            ),
+            'ip' => array(
+                'src' => $ipSrc,
+                'dst' => $ipDst
+            ),
+            'port' => array(
+                'src' => $portSrc,
+                'dst' => $portDst
+            ),
+            'protocole' => $protocole
+
+
+        );
+
+        echo '<tr>';
+//        echo '<td> ' . $date . '</td>' . '<td> ' . $protocole . '</td>' . '<td> ' . $ipSrc . '</td>' . '<td> ' . $ipDst . '</td>' . '<td>' . $ethSrc . '</td>' . '<td>' . $ethDst . '</td>' . '<td>' . $portSrc . '</td>' . '<td>' . $portDst . '</td>' . "\n";
+        echo '</tr>';
     }
 }
+
 ?>
 
- <table id="table">
-        <thead>
-        <th>Date</th>
-        <th>Adresse IP Source</th>
-        <th>Adresse IP Destination</th>
-        <th>Adresse MAC Source</th>
-        <th>Adresse MAC Destination</th>
-        <th>Protocole</th>
-        <th>Port Source</th>
-        <th>Port Destination</th>
-        </thead>
-            <tbody>
-            </tbody>
- </table>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tram et yohoho</title>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<body>
+
+<!--<canvas id="myChart" width="400" height="400"></canvas>-->
+
+<table class="table">
+    <thead>
+    <tr>
+        <td>Date</td>
+        <td>Adresse IP Source</td>
+        <td>Adresse IP Destination</td>
+        <td>Adresse MAC Source</td>
+        <td>Adresse MAC Destination</td>
+        <td>Protocole</td>
+        <td>Port Source</td>
+        <td>Port Destination</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <?php
+        foreach ($datas as $dataze){
+
+            echo '<td>'.$dataze.'</td>';
+        }
+
+        ?>
+    </tr>
+    </tbody>
+</table>
 
 
-
-
-</pre>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="asset/js/script.js"></script>
+</body>
+</html>
