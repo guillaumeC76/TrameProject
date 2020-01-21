@@ -141,7 +141,7 @@ include('inc/header.php'); ?>
                 </div>
 
             <div class="separation">
-                <input id="sujet" type="" name="objet" placeholder="Objet" class="input4" value="<?php if (!empty($_POST['objet'])) {echo $_POST['objet'];} ?>">
+                <input id="sujet" type="text" name="objet" placeholder="Objet" class="input4" value="<?php if (!empty($_POST['objet'])) {echo $_POST['objet'];} ?>">
                 <span class="error"><?php if(!empty($errors['objet'])) {echo $errors['objet']; }?></span>
             </div>
 
