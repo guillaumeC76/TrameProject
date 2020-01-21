@@ -1,7 +1,13 @@
 <?php
-
+session_start();
 include_once '../inc/pdo.php';
 include_once '../inc/function.php';
+
+
+if($_SESSION['login']['role'] != "admin"){
+    header('Location: ../404.php');
+}
+
 
 
 $sql = "SELECT * FROM users";
@@ -105,19 +111,19 @@ if (!empty($_POST['deleteUser'])) {
     $query = $pdo->prepare($sql);
     $query->execute();
 
-    // header('Location: tables.php');
+
 
 }
 
 
 if (!empty($_POST['delete'])) {
-    $i= 0;
+    $i = 0 ;
     $id = $contact[$i]['id'];
-        $sql = "DELETE FROM contact WHERE  id = $id ";
-        $query = $pdo->prepare($sql);
-        $query->execute();
+    $sql = "DELETE FROM contact WHERE  id = $id ";
+    $query = $pdo->prepare($sql);
+    $query->execute();
 
-        // header('Location: tables.php');
+
 
    }
 
@@ -164,7 +170,7 @@ if (!empty($_POST['delete'])) {
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3"> Admin</div>
+            <div class="sidebar-brand-text mx-3">Admin</div>
         </a>
 
 
@@ -312,8 +318,7 @@ if (!empty($_POST['delete'])) {
 
                                     </tbody>
                                 </table>
-
-                                <h3>Modifier un utilisateur : </h3>
+                                <h3>Modifier un utilisateur :</h3>
 
                         </div>
                     </div>
@@ -351,7 +356,7 @@ if (!empty($_POST['delete'])) {
                                       //  echo '<td><a href="tables.php?id=' . $contact[$i]['id'] .'">' . '<img src="img/delete.png"' .'</a>' .'</td>'; ?>
                                     </form> <?php
                                         echo '</tr>';
-                                   // debug($contact[$i]['id']);
+                                     // debug($contact[$i]['id']);
                                     }
                                     ?>
                                     </tbody>
