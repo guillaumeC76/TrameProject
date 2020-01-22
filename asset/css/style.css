@@ -5,6 +5,7 @@
 body {
     font-family: 'Muli', sans-serif;
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 header {
@@ -143,15 +144,18 @@ header .menufixed2 {
 #qui h2 {
     text-transform: uppercase;
     text-align: center;
-    font-size: 3vw;
+    font-size: 3em;
+    margin: 100px 0;
+}
+
+.titreLanguage {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
     margin: 100px 0;
 }
 
 #qui h2 span {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 3vw;
-    margin: 100px 0;
     color: #9aa3ff;
 }
 
@@ -165,68 +169,59 @@ header .menufixed2 {
     height: 100px;
     width: 100px;
     border-radius: 50%;
+    display: block;
+    margin: 0 auto;
 }
 
 #qui .imgAvatar {
     float: left;
-    margin: 0 5%;
+    width: 25%;
 }
 
 #qui .imgAvatar p {
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 70px;
 }
 
-#qui .avatar1 {
-    margin-left: 6%;
-}
 
-#qui .logicielMaitrise {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 2vw;
-    margin-bottom: 60px;
-    margin-top: 40px;
-}
 
-#qui .logoLogiciel {
-    width: 100%;
-    border-radius: 10px;
-}
-
-#qui .logo{
-    height: 70px;
-    width: 70px;
-    margin: 20px 3%;
-}
-
-#qui .logo1 {
-    height: 70px;
-    width: 90px;
-    margin: 20px 3%;
-}
-
-#qui .logo2 {
-    height: 70px;
-    width: 110px;
-    margin: 20px 3%;
-}
-
-#qui .logo3 {
-    height: 70px;
-    width: 120px;
-    margin: 20px 3%;
-}
 
 #qui .logoLogiciel {
     float: left;
 }
 
-.espace {
-    margin-bottom: 40px;
+#qui .logoLogiciel p {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 100px 0;
 }
 
+#qui .logoLogiciel {
+    width: 100%;
+}
+
+#qui .loga {
+    width: 19%;
+    display: inline-block;
+}
+
+#qui .logo{
+    width: 70%;
+    display: block;
+    margin:  0 auto;
+}
+
+#qui .logoCSS {
+    width: 50%;
+    display: block;
+    margin:  0 auto;
+}
+
+#qui .logoJS {
+    width: 100%;
+    display: block;
+    margin:  0 auto;
+}
 
 #qui .barreVertical {
     width: 5px;
@@ -241,7 +236,7 @@ header .menufixed2 {
 #qui .text {
     display: inline-block;
     vertical-align: top;
-    font-size: 1.2vw;
+    font-size: 1.2em;
     margin-top: 20px;
     width: 46%;
     line-height: 40px;
@@ -249,6 +244,10 @@ header .menufixed2 {
 
 #qui .text .italic {
     font-style: oblique;
+}
+
+.espace {
+    margin-bottom: 40px;
 }
 
 
@@ -316,7 +315,7 @@ h4{
 }
 
 .formpage #boutonenvoyer {
-    width: 30%;
+    width: 44%;
     color: white;
     padding: 10px 0;
     border-radius: 5px;
@@ -324,7 +323,7 @@ h4{
     text-transform: uppercase;
     font-size: 1.4em;
     background-color: #25313C;
-    margin: 80px 32.5%;
+    margin: 80px 25.5%;
     transition: all 0.5s;
 }
 
@@ -454,30 +453,18 @@ h6 {
 
 @media screen and (max-width: 1439px) {
 
-    #qui h2 {
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 4vw;
-        margin: 100px 0;
-    }
 
     #qui .avatarEtLogo {
         width: 100%;
     }
 
-    #qui .avatar {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
+    #qui .imgAvatar {
+        float: left;
+        width: 25%;
     }
 
     .avatarSeul {
         width: 100%;
-    }
-
-    #qui .imgAvatar {
-        float: left;
-        width: 14%;
     }
 
     #qui .imgAvatar img {
@@ -485,115 +472,50 @@ h6 {
         margin: 0 auto;
     }
 
-    #qui .imgAvatar p {
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 70px;
-    }
-
-    #qui .avatar1 {
-        margin-left: 6%;
-    }
-
-    #qui .logicielMaitrise {
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 4vw;
-        margin-bottom: 60px;
-        margin-top: 40px;
-    }
-
-    #qui .logoLogiciel {
-        width: 100%;
-    }
-
-    #qui .logo{
-        height: 70px;
-        width: 70px;
-        margin: 20px 2%;
-    }
-
-    #qui .logo1 {
-        height: 70px;
-        width: 90px;
-        margin: 20px 2%;
-    }
-
-    #qui .logo2 {
-        height: 70px;
-        width: 110px;
-        margin: 20px 2%;
-    }
-
-    #qui .logo3 {
-        height: 70px;
-        width: 120px;
-        margin: 20px 2%;
-    }
-
-    #qui .logoLogiciel {
-        float: left;
-    }
-
-    .espace {
-        margin-bottom: 40px;
-    }
-
-
     #qui .barreVertical {
-        width: 5px;
-        height: 520px;
-        background-color: black;
-        border-radius: 100px;
-        display: inline-block;
-        vertical-align: top;
-        margin: 0 2%;
-    }
-
-
-    #qui .barreVertical {
-        height: 0.01px;
+        display: none;
     }
 
     #qui .text {
-        font-size: 3vw;
-        margin-top: 20px;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1.2em;
         width: 100%;
-        line-height: 40px;
+        line-height: 30px;
+        padding: 0 20px;
     }
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 700px) {
+    #qui .loga {
+        display: none;
+    }
 
-    .inscri {
-        margin-left: 35%;
+    #qui .titreLanguage {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #qui .imgAvatar {
+        width: 50%;
+    }
+
+    #qui .imgAvatar p {
+        margin-bottom: 40px;
     }
 }
 
 @media screen and (max-width: 600px) {
-
-    .inscri {
-        margin-left: 25%;
+    .separation {
+        float: left;
+        width: 95%;
+        margin-right: 5%;
+        margin-bottom: 20px;
     }
 }
 
-@media screen and (max-width: 615px) {
 
-    #qui .logo3 {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 642px) {
-
-    header .menufixed p {
-        display: none;
-    }
-
-    header .menufixed img {
-        padding-bottom: 20px;
-    }
-}
 
 

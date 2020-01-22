@@ -86,15 +86,15 @@ include('inc/header.php'); ?>
         </div>
 
         <div class="logoLogiciel">
-            <p class="logicielMaitrise">Languages maitrisés</p>
+            <h2 class="titreLanguage">Languages maitrisés</h2>
 
-            <div class="logoImg">
-                <img src="asset/img/html.png" alt="Logo de HTML" class="logo">
-                <img src="asset/img/css.svg" alt="Logo de CSS" class="logo">
-                <img src="asset/img/php.png" alt="Logo de PHP" class="logo1">
-                <img src="asset/img/sql.png" alt="Logo de MySQL" class="logo2">
-                <img src="asset/img/js.png" alt="Logo de JavaScript" class="logo3">
-            </div>
+            <ul class="logoImg">
+                <li class="loga"><img src="asset/img/html.png" alt="Logo de HTML" class="logo"></li>
+                <li class="loga"><img src="asset/img/css.svg" alt="Logo de CSS" class="logoCSS"></li>
+                <li class="loga"><img src="asset/img/js.png" alt="Logo de JavaScript" class="logoJS"></li>
+                <li class="loga"><img src="asset/img/php.png" alt="Logo de PHP" class="logo"></li>
+                <li class="loga"><img src="asset/img/sql.png" alt="Logo de MySQL" class="logo"></li>
+            </ul>
             <div class="espace"></div>
         </div>
     </div>
@@ -154,9 +154,6 @@ include('inc/header.php'); ?>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="asset/flexslider/jquery.flexslider.js"></script>
-    <script src="asset/fontresponsiv/fontr.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-
     <script src="asset/js/main.js"></script>
 
 
