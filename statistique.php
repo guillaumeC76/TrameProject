@@ -52,12 +52,7 @@ foreach ($json as $jisonne) {
             ),
             'protocole' => $protocole
 
-
         );
-
-        echo '<tr>';
-//        echo '<td> ' . $date . '</td>' . '<td> ' . $protocole . '</td>' . '<td> ' . $ipSrc . '</td>' . '<td> ' . $ipDst . '</td>' . '<td>' . $ethSrc . '</td>' . '<td>' . $ethDst . '</td>' . '<td>' . $portSrc . '</td>' . '<td>' . $portDst . '</td>' . "\n";
-        echo '</tr>';
     }
 }
 
@@ -73,34 +68,66 @@ foreach ($json as $jisonne) {
 </head>
 <body>
 
-<!--<canvas id="myChart" width="400" height="400"></canvas>-->
+<canvas id="myChart" ></canvas>
 
-<table class="table">
+
+<table class="wrap">
     <thead>
     <tr>
         <td>Date</td>
+        <td>Protocole</td>
         <td>Adresse IP Source</td>
         <td>Adresse IP Destination</td>
         <td>Adresse MAC Source</td>
         <td>Adresse MAC Destination</td>
-        <td>Protocole</td>
         <td>Port Source</td>
         <td>Port Destination</td>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <?php
-        foreach ($datas as $dataze){
 
-            echo '<td>'.$dataze.'</td>';
-        }
+    <?php
+    foreach ($datas as $data) {
+        echo '<tr>';
+        echo '<td>' . $data['date'] . '</td>';
+        echo '<td>' . $data['protocole'] . '</td>';
+        echo '<td>' . $data['ip']['src'] . '</td>';
+        echo '<td>' . $data['ip']['dst'] . '</td>';
+        echo '<td>' . $data['eth']['src'] . '</td>';
+        echo '<td>' . $data['eth']['dst'] . '</td>';
+        echo '<td>' . $data['port']['src'] . '</td>';
+        echo '<td>' . $data['port']['dst'] . '</td>';
+        echo '</tr>';
+    }
+    ?>
 
-        ?>
-    </tr>
+
     </tbody>
 </table>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'doughnut',
 
+        // The data for our dataset
+        data: {
+            labels: ['protocole'],
+            datasets: [{
+                label: 'protocole',
+                backgroundColor: [
+                    'rgb(148, 68, 15)',
+                    'rgb(0, 0, 0)'
+
+                ],
+                borderColor: 'rgb(255, 255, 255)',
+                data: [<?=$protocole?>]
+            }]
+        },
+// Configuration options go here
+        options: {}
+    });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script
