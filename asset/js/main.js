@@ -3,8 +3,5 @@ $(window).load(function() {
         animation: "slide",
         slideshowSpeed: 4000,
     });
-
-
-
 });
 
