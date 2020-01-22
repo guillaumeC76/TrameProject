@@ -1,4 +1,7 @@
 <?php
+session_start();
+include ('inc/function.php');
+include ('inc/pdo.php');
 $fichier = file_get_contents('./files/capture.json');
 $json = json_decode($fichier, true);
 
@@ -56,7 +59,7 @@ foreach ($json as $jisonne) {
     }
 }
 
-?>
+include ('inc/header.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -137,3 +140,5 @@ foreach ($json as $jisonne) {
 <script type="text/javascript" src="asset/js/script.js"></script>
 </body>
 </html>
+
+<?php include ('inc/footer.php');
