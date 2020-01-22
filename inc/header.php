@@ -41,7 +41,7 @@
     <div class="menufixed2">
         <div class="icon-bar2" id="responsive_headline">
             <a class="active" href="index.php"><img src="asset/img/home.png" id="home"><p>Accueil</p></a>
-            <a href="#"><img src="asset/img/stats.png" id="question"><p>Statistiques</p></a>
+            <a href="statistique.php"><img src="asset/img/stats.png" id="question"><p>Statistiques</p></a>
             <a href="deconnexion.php"><img src="asset/img/croix.png" id="user"><p>Deconnexion</p></a>
         </div>
     </div>
