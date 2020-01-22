@@ -124,19 +124,20 @@ if (!empty($_POST['delete'])) {
 
 if (!empty($_POST['modif'])) {
 
-//UPDATE `users` SET `role` = 'admin' WHERE `users`.`id` = 7;
+    //UPDATE `users` SET `pseudo` = 'S4S4m' WHERE `users`.`id` = 7;
 
     $i = 0;
 
-    $sql = "UPDATE users SET pseudo = '" . $user[$i]['pseudo'] . "', 
-                             email  = '" . $user[$i]['email'] . "' , 
-                             role  =  '" . $user[$i]['role'] . "' 
-                         WHERE id =   '" . $user[$i]['id'] . "'";
+    $sql = "UPDATE users SET pseudo = '".$user[$i]['pseudo']."', 
+                             email  = '".$user[$i]['email']."' , 
+                             role  =  '".$user[$i]['role']."' 
+                         WHERE id =   '".$user[$i]['id']."' ";
     $query = $pdo->prepare($sql);
-    $query->bindValue(':pseudo', $user[$i]['pseudo'], PDO::PARAM_STR);
-    $query->bindValue(':email', $user[$i]['email'], PDO::PARAM_STR);
-    $query->bindValue(':role', $user[$i]['role'], PDO::PARAM_STR);
+    $query->bindValue('pseudo', $user[$i]['pseudo'], PDO::PARAM_STR);
+    $query->bindValue('email', $user[$i]['email'], PDO::PARAM_STR);
+    $query->bindValue('role', $user[$i]['role'], PDO::PARAM_STR);
     $query->execute();
+    debug('"'.$user[$i]['pseudo'].'"');
 
 
 
