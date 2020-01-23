@@ -88,25 +88,34 @@ if (!empty($_POST['submitted'])) {
 include ('inc/header.php'); ?>
 
 
-<h6>Inscription</h6>
+<h3 class="headline">Inscription</h3>
 
-<form action="register.php" method="post" class="inscri">
+<form action="register.php" method="post" class="formpage">
+
+    <div class="separation">
     <label for="pseudo">Pseudo *</label>
     <input type="text" name="pseudo" id="pseudo" value="<?php if (!empty($_POST['pseudo'])) { echo $_POST['pseudo'];}?>">
     <p class="error"><?php if (!empty($errors['pseudo'])) { echo $errors['pseudo']; } ?></p>
+    </div>
 
+    <div class="separation">
     <label for="email">Email *</label>
     <input type="email" name="email" id="email" value="<?php if (!empty($_POST['email'])) { echo $_POST['email'];}?>">
     <p class="error"><?php if (!empty($errors['email'])) { echo $errors['email']; } ?></p>
+    </div>
 
+    <div class="separation">
     <label for="password1">Mot de passe</label>
     <input type="password" name="password1" id="password1" value="">
     <p class="error"><?php if (!empty($errors['password'])) { echo $errors['password']; } ?></p>
+    </div>
 
+    <div class="separation">
     <label for="password2">Confirmez votre mot de passe</label>
     <input type="password" name="password2" id="password2" value="">
+    </div>
 
-    <input type="submit" name="submitted" value="Inscivez vous">
+    <input type="submit" name="submitted" id="boutonenvoyer" value="Inscivez vous">
 </form>
 
 
