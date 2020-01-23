@@ -1,4 +1,7 @@
 <?php
+session_start();
+include ('inc/function.php');
+include ('inc/pdo.php');
 $fichier = file_get_contents('./files/capture.json');
 $json = json_decode($fichier, true);
 
@@ -30,11 +33,17 @@ foreach ($json as $jisonne) {
         if (isset($jisonne["udp"]["udp.dstport"])) {
             $portDst = $jisonne["udp"]["udp.dstport"];
         }
-        if (isset($jisonne["tcp"])) {
-            $protocole = "TCP";
-        } else {
-            $protocole = "UDP";
+        if (isset($jisonne["tcp"])){
+            $tcp = $jisonne["tcp"];
         }
+        if (isset($jisonne["udp"])){
+            $udp = $jisonne["udp"];
+        }
+//        if (isset($jisonne["tcp"])) {
+//            $protocole = "TCP";
+//        } else {
+//            $protocole = "UDP";
+//        }
 
         $datas[] = array(
             'date' => $date,
@@ -50,13 +59,13 @@ foreach ($json as $jisonne) {
                 'src' => $portSrc,
                 'dst' => $portDst
             ),
-            'protocole' => $protocole
+//            'protocole' => $protocole
 
         );
     }
 }
 
-?>
+include ('inc/header.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -90,7 +99,7 @@ foreach ($json as $jisonne) {
     foreach ($datas as $data) {
         echo '<tr>';
         echo '<td>' . $data['date'] . '</td>';
-        echo '<td>' . $data['protocole'] . '</td>';
+//        echo '<td>' . $data['protocole'] . '</td>';
         echo '<td>' . $data['ip']['src'] . '</td>';
         echo '<td>' . $data['ip']['dst'] . '</td>';
         echo '<td>' . $data['eth']['src'] . '</td>';
@@ -112,16 +121,16 @@ foreach ($json as $jisonne) {
 
         // The data for our dataset
         data: {
-            labels: ['protocole'],
+            labels: ['TCP', 'UDP'],
             datasets: [{
-                label: 'protocole',
+                label: 'TCP', 'UDP',
                 backgroundColor: [
                     'rgb(148, 68, 15)',
                     'rgb(0, 0, 0)'
 
                 ],
                 borderColor: 'rgb(255, 255, 255)',
-                data: [<?=$protocole?>]
+                data: [<?=$udp?>, <?=$tcp?>]
             }]
         },
 // Configuration options go here
@@ -129,7 +138,7 @@ foreach ($json as $jisonne) {
     });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -137,3 +146,5 @@ foreach ($json as $jisonne) {
 <script type="text/javascript" src="asset/js/script.js"></script>
 </body>
 </html>
+
+<?php include ('inc/footer.php');
