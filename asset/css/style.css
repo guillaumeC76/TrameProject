@@ -379,67 +379,56 @@ footer p a:hover {
 
 
 
-h6 {
-    font-size: 4vw;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 60px 0;
+.separation2 {
+    width: 45%;
+    margin-bottom: 3%;
 }
 
-.inscri {
-    width: 60%;
-    margin-left: 40%;
+.centre {
+    margin-left: 32%;
 }
 
 
-.inscri label {
-    font-size: 1.2em;
-    display: block;
-    padding-bottom: 20px;
-    padding-top: 15px;
-    text-transform: uppercase;
-}
 
-.inscri input[type=text], .inscri input[type=email], .inscri input[type=password] {
-    width: 300px;
-    height: 30px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
 
-.inscri input[type=submit] {
-    display: block;
-    margin-top: 50px;
-    margin-left: 7%;
-    background-color: black;
-    padding: 15px 60px;
-    border-radius: 10px;
-    color: white;
-    margin-bottom: 185px;
-    text-transform: uppercase;
-}
+/*//////////////////////////////////
+              TABLEAU
+//////////////////////////////////*/
 
-.ici {
-    padding-top: 200px;
-}
 
-.success {
-    text-align: center;
+
+
+.wrap-tableau {
+    width: 100%;
     margin-top: 80px;
-    color: #000000;
-    font-size: 1.8em;
+    padding: 0 2%;
+}
+
+thead {
+    border: 2px solid black;
+}
+
+thead th {
+    border: 2px solid black;
+    padding: 10px 2%;
     text-transform: uppercase;
-    line-height: 60px;
+    background-color: #25313C;
+    color: white;
 }
 
-.recharge {
-    color: #bf6153;
+tbody td {
+    border: 2px solid black;
+    text-align: center;
+    padding: 25px 0 10px 0;
 }
 
-.recharge:hover {
-    color: #ff6942;
+tbody tr:nth-child(odd) {
+    background-color: #88959A;
 }
 
+tbody tr:nth-child(even) {
+    background-color: white;
+}
 
 
 
@@ -495,6 +484,15 @@ h6 {
     #qui .titreLanguage {
         display: none;
     }
+
+    .separation2 {
+        width: 70%;
+        margin-bottom: 3%;
+    }
+
+    .centre {
+        margin-left: 20%;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -513,6 +511,20 @@ h6 {
         width: 95%;
         margin-right: 5%;
         margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 626px) {
+    .icon-bar a p {
+        display: none;
+    }
+
+    .icon-bar {
+        margin-bottom: 20px;
+    }
+
+    .menufixed .active {
+        padding-bottom: 20px;
     }
 }
 

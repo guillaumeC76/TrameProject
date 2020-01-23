@@ -54,21 +54,27 @@ if (!empty($_POST['submitted'])) {
 include ('inc/header.php'); ?>
 
 
-<h6>Connexion</h6>
+<h3 class="headline">Connexion</h3>
 
-<form action="login.php" method="post" class="inscri">
+<form action="login.php" method="post" class="formpage">
 
+    <div class="centre">
+    <div class="separation2">
     <label for="login">Pseudo ou email *</label>
     <input type="text" name="login" id="login" value="<?php if (!empty($_POST['login'])) { echo $_POST['login'];}?>">
     <p class="error"><?php if (!empty($errors['login'])) { echo $errors['login']; } ?></p>
+    </div>
 
+    <div class="separation2">
     <label for="password">Mot de passe</label>
     <input type="password" name="password" id="password" value=""><br>
+    </div>
 
     <span>Pas de compte ? <a href="register.php">Inscrivez-vous</a></span><br>
     <span class="autrepass">Ou alors vous avez <a href="forgetpassword.php">oublier votre mot de passe ?</a></span>
+    </div>
 
-    <input type="submit" name="submitted" value="connexion">
+    <input type="submit" id="boutonenvoyer" name="submitted" value="connexion">
 
 </form>
 

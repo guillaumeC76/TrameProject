@@ -75,6 +75,8 @@ include('inc/header.php'); ?>
         <canvas id="chartMac"></canvas>
     </div>
 
+    <h3 class="headline">Toutes les statistiques</h3>
+
     <div class="wrap-tableau">
         <div class="container">
             <div class="wrap-tableau2">
