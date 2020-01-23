@@ -1,7 +1,7 @@
 <?php
 session_start();
-include ('inc/function.php');
-include ('inc/pdo.php');
+include('inc/function.php');
+include('inc/pdo.php');
 $fichier = file_get_contents('./files/capture.json');
 $json = json_decode($fichier, true);
 
@@ -33,10 +33,10 @@ foreach ($json as $jisonne) {
         if (isset($jisonne["udp"]["udp.dstport"])) {
             $portDst = $jisonne["udp"]["udp.dstport"];
         }
-        if (isset($jisonne["tcp"])){
+        if (isset($jisonne["tcp"])) {
             $tcp = $jisonne["tcp"];
         }
-        if (isset($jisonne["udp"])){
+        if (isset($jisonne["udp"])) {
             $udp = $jisonne["udp"];
         }
 //        if (isset($jisonne["tcp"])) {
@@ -58,93 +58,176 @@ foreach ($json as $jisonne) {
             'port' => array(
                 'src' => $portSrc,
                 'dst' => $portDst
-            ),
+            )
 //            'protocole' => $protocole
 
         );
     }
 }
 
-include ('inc/header.php'); ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>Tram et yohoho</title>
-    <link href="style.css" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-</head>
-<body>
-
-<canvas id="myChart" ></canvas>
+include('inc/header.php'); ?>
 
 
-<table class="wrap">
-    <thead>
-    <tr>
-        <td>Date</td>
-        <td>Protocole</td>
-        <td>Adresse IP Source</td>
-        <td>Adresse IP Destination</td>
-        <td>Adresse MAC Source</td>
-        <td>Adresse MAC Destination</td>
-        <td>Port Source</td>
-        <td>Port Destination</td>
-    </tr>
-    </thead>
-    <tbody>
+    <div id="chartContainer1">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div id="chartContainer2">
+        <canvas id="chartMac"></canvas>
+    </div>
 
-    <?php
-    foreach ($datas as $data) {
-        echo '<tr>';
-        echo '<td>' . $data['date'] . '</td>';
-//        echo '<td>' . $data['protocole'] . '</td>';
-        echo '<td>' . $data['ip']['src'] . '</td>';
-        echo '<td>' . $data['ip']['dst'] . '</td>';
-        echo '<td>' . $data['eth']['src'] . '</td>';
-        echo '<td>' . $data['eth']['dst'] . '</td>';
-        echo '<td>' . $data['port']['src'] . '</td>';
-        echo '<td>' . $data['port']['dst'] . '</td>';
-        echo '</tr>';
-    }
-    ?>
+    <div class="wrap-tableau">
+        <div class="container">
+            <div class="wrap-tableau2">
+                <div class="tableau">
+                    <table id="tableau">
+                        <thead>
+                        <tr class="headtableau">
+                            <th>Date et heure</th>
+                            <th>Adresse IP Source</th>
+                            <th>Adresse IP Destination</th>
+                            <th>Adresse MAC Source</th>
+                            <th>Adresse MAC Destination</th>
+                            <th>Protocole</th>
+                            <th>Port Source</th>
+                            <th>Port Destination</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $tcp = 0;
+                        $udp = 0;
+                        $apple = 0;
+                        $wd = 0;
+                        $autres = 0;
+                        $azurewave = 0;
+                        $ubiquiti = 0;
+                        $count = count($json);
+                        for ($i = 0; $i < $count; $i++) {
+                            echo '<tr>';
+                            $row = $json[$i]['_source']['layers'];
+                            if (isset($row['frame'])) {
+                                echo '<td>' . $json[$i]['_source']['layers']['frame']['frame.time'] . '</td>';
+                            } else {
+                                echo '<td></td>';
+                            }
+                            if (isset($row['ip'])) {
+                                echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.src'] . '</td>';
+                                echo '<td>' . $json[$i]['_source']['layers']['ip']['ip.dst'] . '</td>';
+                            } else {
+                                echo '<td></td>';
+                                echo '<td></td>';
+                            }
+                            if (isset($row['eth'])) {
+                                echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.src'] . '</td>';
+                                echo '<td>' . $json[$i]['_source']['layers']['eth']['eth.dst'] . '</td>';
+                                if ($json[$i]['_source']['layers']['eth']['eth.src_tree']['eth.src.oui_resolved'] == 'Apple, Inc.') {
+                                    $apple++;
+                                } elseif ($json[$i]['_source']['layers']['eth']['eth.src_tree']['eth.src.oui_resolved'] == 'Intel Corporate') {
+                                    $wd++;
+                                } elseif ($json[$i]['_source']['layers']['eth']['eth.src_tree']['eth.src.oui_resolved'] == 'AzureWave Technology Inc.') {
+                                    $azurewave++;
+                                } elseif ($json[$i]['_source']['layers']['eth']['eth.src_tree']['eth.src.oui_resolved'] == 'Ubiquiti Networks Inc.') {
+                                    $ubiquiti++;
+                                } else {
+                                    $autres++;
+                                }
+                            } else {
+                                echo '<td></td>';
+                                echo '<td></td>';
+                            }
+                            if (isset($row['udp'])) {
+                                echo '<td>UDP</td>';
+                                echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.srcport'] . '</td>';
+                                echo '<td>' . $json[$i]['_source']['layers']['udp']['udp.dstport'] . '</td>';
+                                $udp++;
+                            } else if (isset($row['tcp'])) {
+                                echo '<td>TCP</td>';
+                                echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.srcport'] . '</td>';
+                                echo '<td>' . $json[$i]['_source']['layers']['tcp']['tcp.dstport'] . '</td>';
+                                $tcp++;
+                            } else {
+                                echo '<td></td>';
+                                echo '<td></td>';
+                                echo '<td></td>';
+                            }
+                            echo '</tr>';
+
+                        }
 
 
-    </tbody>
-</table>
-<script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'doughnut',
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        // The data for our dataset
-        data: {
-            labels: ['TCP', 'UDP'],
-            datasets: [{
-                label: 'TCP', 'UDP',
-                backgroundColor: [
-                    'rgb(148, 68, 15)',
-                    'rgb(0, 0, 0)'
-
-                ],
-                borderColor: 'rgb(255, 255, 255)',
-                data: [<?=$udp?>, <?=$tcp?>]
-            }]
-        },
-// Configuration options go here
-        options: {}
-    });
-</script>
+    <script>
 
 
-<script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-<script type="text/javascript" src="asset/js/script.js"></script>
-</body>
-</html>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['TCP', 'UDP'],
+                datasets: [{
+                    label: 'Types de connexions',
+                    data: [<?=$udp?>, <?=$tcp?>],
+                    backgroundColor: [
+                        'rgba(255, 165, 0, 0.2)',
+                        'rgba(54, 162, 235, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 165, 0, 1)',
+                        'rgba(54, 162, 235, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Type de protocole',
+                }
+            }
+        });
 
-<?php include ('inc/footer.php');
+        var ctx2 = document.getElementById('chartMac').getContext('2d');
+        var chartMac = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ['Apple', 'Intel', 'Azurewave', 'Ubiquiti', 'Autres'],
+                datasets: [{
+                    label: 'Types de connexions',
+                    data: [<?=$apple?>, <?=$wd?>, <?= $azurewave ?>, <?=$ubiquiti?> ,<?=$autres?>],
+                    backgroundColor: [
+                        'rgba(255, 165, 0, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(155, 155, 155,0.2)',
+                        'rgba(255, 0 ,0, 0.2)',
+                        'rgba(40, 250 ,0, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 165, 0, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(155, 155, 155,1)',
+                        'rgba(255, 0 ,0, 1)',
+                        'rgba(40, 250 ,0, 1)'
+                    ],
+
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Constructeur de la carte réseau de l\'appareil',
+                }
+            }
+        });
+
+    </script>
+
+
+<?php include('inc/footer.php');

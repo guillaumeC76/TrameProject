@@ -2,8 +2,7 @@
 session_start();
 include ('inc/function.php');
 include ('inc/pdo.php');
-$errors = array();
-$success = false;
+
 
 if (!empty($_POST['submitted'])) {
 
