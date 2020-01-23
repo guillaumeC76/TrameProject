@@ -33,11 +33,17 @@ foreach ($json as $jisonne) {
         if (isset($jisonne["udp"]["udp.dstport"])) {
             $portDst = $jisonne["udp"]["udp.dstport"];
         }
-        if (isset($jisonne["tcp"])) {
-            $protocole = "TCP";
-        } else {
-            $protocole = "UDP";
+        if (isset($jisonne["tcp"])){
+            $tcp = $jisonne["tcp"];
         }
+        if (isset($jisonne["udp"])){
+            $udp = $jisonne["udp"];
+        }
+//        if (isset($jisonne["tcp"])) {
+//            $protocole = "TCP";
+//        } else {
+//            $protocole = "UDP";
+//        }
 
         $datas[] = array(
             'date' => $date,
@@ -53,7 +59,7 @@ foreach ($json as $jisonne) {
                 'src' => $portSrc,
                 'dst' => $portDst
             ),
-            'protocole' => $protocole
+//            'protocole' => $protocole
 
         );
     }
@@ -93,7 +99,7 @@ include ('inc/header.php'); ?>
     foreach ($datas as $data) {
         echo '<tr>';
         echo '<td>' . $data['date'] . '</td>';
-        echo '<td>' . $data['protocole'] . '</td>';
+//        echo '<td>' . $data['protocole'] . '</td>';
         echo '<td>' . $data['ip']['src'] . '</td>';
         echo '<td>' . $data['ip']['dst'] . '</td>';
         echo '<td>' . $data['eth']['src'] . '</td>';
@@ -115,16 +121,16 @@ include ('inc/header.php'); ?>
 
         // The data for our dataset
         data: {
-            labels: ['protocole'],
+            labels: ['TCP', 'UDP'],
             datasets: [{
-                label: 'protocole',
+                label: 'TCP', 'UDP',
                 backgroundColor: [
                     'rgb(148, 68, 15)',
                     'rgb(0, 0, 0)'
 
                 ],
                 borderColor: 'rgb(255, 255, 255)',
-                data: [<?=$protocole?>]
+                data: [<?=$udp?>, <?=$tcp?>]
             }]
         },
 // Configuration options go here
@@ -132,7 +138,7 @@ include ('inc/header.php'); ?>
     });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
