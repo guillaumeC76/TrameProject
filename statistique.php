@@ -168,7 +168,7 @@ include('inc/header.php'); ?>
 
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'pie',
+            type: 'doughnut',
             data: {
                 labels: ['TCP', 'UDP'],
                 datasets: [{
@@ -195,7 +195,7 @@ include('inc/header.php'); ?>
 
         var ctx2 = document.getElementById('chartMac').getContext('2d');
         var chartMac = new Chart(ctx2, {
-            type: 'pie',
+            type: 'bar',
             data: {
                 labels: ['Apple', 'Intel', 'Azurewave', 'Ubiquiti', 'Autres'],
                 datasets: [{
@@ -222,7 +222,7 @@ include('inc/header.php'); ?>
             options: {
                 title: {
                     display: true,
-                    text: 'Constructeur de la carte réseau de l\'appareil',
+                    text: 'Carte réseau de l\'appareil',
                 }
             }
         });
