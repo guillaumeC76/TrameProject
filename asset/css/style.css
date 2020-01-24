@@ -388,6 +388,28 @@ footer p a:hover {
     margin-left: 32%;
 }
 
+.separation3 {
+    width: 50%;
+    margin: 0 0 3% 22%;
+}
+
+.ici {
+    display: inline;
+    float: left;
+    position: absolute;
+    margin-top: 350px;
+    margin-left: 47%;
+    font-size: 1.5em;
+}
+
+.ici a {
+    color: #527dd2;
+}
+
+.ici a:hover {
+    color: black;
+}
+
 
 
 
@@ -528,6 +550,11 @@ tbody tr:nth-child(even) {
     }
 }
 
+@media screen and (max-width: 920px) {
+    .formpage #boutonenvoyer {
+        font-size: 2.4vw;
+    }
+}
 
 
 

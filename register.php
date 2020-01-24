@@ -2,7 +2,6 @@
 session_start();
 include ('inc/function.php');
 include ('inc/pdo.php');
-$title = 'Inscription';
 $errors = array();
 $success = false;
 

@@ -1,7 +1,6 @@
 <?php
 include ('inc/function.php');
 include ('inc/pdo.php');
-$title = 'Modifier votre mot de passe';
 $errors = array();
 
 if (!empty($_GET['token']) && !empty($_GET['email'])) {
@@ -56,18 +55,22 @@ if (!empty($_GET['token']) && !empty($_GET['email'])) {
 include ('inc/header.php'); ?>
 
 
-<h1>Modifier votre mot de passe</h1>
+<h3 class="headline">Modifier votre mot de passe</h3>
 
-<form action="" method="post" class="inscri">
+<form action="" method="post" class="formpage">
 
+    <div class="separation">
     <label for="password1">Nouveau mot de passe</label>
     <input type="password" name="password1" id="password1" value="">
     <p class="error"><?php if (!empty($errors['password'])) { echo $errors['password']; } ?></p>
+    </div>
 
+    <div class="separation">
     <label for="password2">Confirmez votre nouveaux mot de passe</label>
     <input type="password" name="password2" id="password2" value="">
+    </div>
 
-    <input type="submit" name="submitted" value="Modifier">
+    <input type="submit" name="submitted" id="boutonenvoyer" value="Modifier">
 
 </form>
 
