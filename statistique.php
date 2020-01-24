@@ -5,75 +5,21 @@ include('inc/pdo.php');
 $fichier = file_get_contents('./files/capture.json');
 $json = json_decode($fichier, true);
 
-$datas = array();
-foreach ($json as $jisonne) {
-    if (isset($jisonne["_source"])) {
-        $jisonne = $jisonne['_source'];
-        if (isset($jisonne["layers"])) {
-            $jisonne = $jisonne['layers'];
-        }
-        if (isset($jisonne["frame"]["frame.time"])) {
-            $date = $jisonne["frame"]["frame.time"];
-        }
-        if (isset($jisonne["eth"]["eth.src"])) {
-            $ethSrc = $jisonne["eth"]["eth.src"];
-        }
-        if (isset($jisonne["eth"]["eth.dst"])) {
-            $ethDst = $jisonne["eth"]["eth.dst"];
-        }
-        if (isset($jisonne["ip"]["ip.src"])) {
-            $ipSrc = $jisonne["ip"]["ip.src"];
-        }
-        if (isset($jisonne["ip"]["ip.dst"])) {
-            $ipDst = $jisonne["ip"]["ip.dst"];
-        }
-        if (isset($jisonne["udp"]["udp.srcport"])) {
-            $portSrc = $jisonne["udp"]["udp.srcport"];
-        }
-        if (isset($jisonne["udp"]["udp.dstport"])) {
-            $portDst = $jisonne["udp"]["udp.dstport"];
-        }
-        if (isset($jisonne["tcp"])) {
-            $tcp = $jisonne["tcp"];
-        }
-        if (isset($jisonne["udp"])) {
-            $udp = $jisonne["udp"];
-        }
-//        if (isset($jisonne["tcp"])) {
-//            $protocole = "TCP";
-//        } else {
-//            $protocole = "UDP";
-//        }
-
-        $datas[] = array(
-            'date' => $date,
-            'eth' => array(
-                'src' => $ethSrc,
-                'dst' => $ethDst
-            ),
-            'ip' => array(
-                'src' => $ipSrc,
-                'dst' => $ipDst
-            ),
-            'port' => array(
-                'src' => $portSrc,
-                'dst' => $portDst
-            )
-//            'protocole' => $protocole
-
-        );
-    }
-}
-
 include('inc/header.php'); ?>
+<div class="containerFlex">
+    <div class="containerGraphique">
+        <div id="chartContainer1">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <div class="containerGraphique2">
+        <div id="chartContainer2">
+            <canvas id="chartMac"></canvas>
+        </div>
+    </div>
+</div>
 
 
-    <div id="chartContainer1">
-        <canvas id="myChart"></canvas>
-    </div>
-    <div id="chartContainer2">
-        <canvas id="chartMac"></canvas>
-    </div>
 
     <h3 class="headline">Toutes les statistiques</h3>
 
@@ -170,19 +116,19 @@ include('inc/header.php'); ?>
 
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'doughnut',
+            type: 'bar',
             data: {
                 labels: ['TCP', 'UDP'],
                 datasets: [{
                     label: 'Types de connexions',
                     data: [<?=$udp?>, <?=$tcp?>],
                     backgroundColor: [
-                        'rgba(255, 165, 0, 0.2)',
-                        'rgba(54, 162, 235, 0.2)'
+                        '#25313c',
+                        '#407eae'
                     ],
                     borderColor: [
-                        'rgba(255, 165, 0, 1)',
-                        'rgba(54, 162, 235, 1)'
+                        '#25313c',
+                        '#407eae'
                     ],
                     borderWidth: 1
                 }]
@@ -204,18 +150,18 @@ include('inc/header.php'); ?>
                     label: 'Types de connexions',
                     data: [<?=$apple?>, <?=$wd?>, <?= $azurewave ?>, <?=$ubiquiti?> ,<?=$autres?>],
                     backgroundColor: [
-                        'rgba(255, 165, 0, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(155, 155, 155,0.2)',
-                        'rgba(255, 0 ,0, 0.2)',
-                        'rgba(40, 250 ,0, 0.2)'
+                        '#25313c',
+                        '#407eae',
+                        '#88959A',
+                        '#c2c2c2',
+                        '#ECECEC'
                     ],
                     borderColor: [
-                        'rgba(255, 165, 0, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(155, 155, 155,1)',
-                        'rgba(255, 0 ,0, 1)',
-                        'rgba(40, 250 ,0, 1)'
+                        '#25313c',
+                        '#407eae',
+                        '#88959A',
+                        '#c2c2c2',
+                        '#ECECEC'
                     ],
 
                     borderWidth: 1

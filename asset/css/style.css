@@ -430,6 +430,17 @@ tbody tr:nth-child(even) {
     background-color: white;
 }
 
+.containerFlex{
+    display: flex;
+    justify-content: space-between;
+}
+.containerGraphique{
+    width: 45%;
+}
+.containerGraphique2{
+    width: 45%;
+}
+
 
 
 
