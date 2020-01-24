@@ -433,12 +433,13 @@ tbody tr:nth-child(even) {
 .containerFlex{
     display: flex;
     justify-content: space-between;
+
 }
 .containerGraphique{
-    width: 45%;
+width: 48%;
 }
 .containerGraphique2{
-    width: 45%;
+width: 48%;
 }
 
 
