@@ -103,8 +103,8 @@ include('inc/header.php'); ?>
 
 
     <div class="text">
-        <p>Nous sommes des élèves de la Nfactory School en première année Bachelor. Notre projet était de créer un site web sur les trames réseaux. L'objectif est <span class="italic">d' analyser des trames réseaux et les transmettre sous forme de statistique</span> beaucoup plus clair et plus compréhenssible.</p><br>
-        <p>Nous étions 4 pour réaliser ce projet dans un temps impartie de 2 semaines. Nous sommes des développeurs en développement, c'est notre seul devise. Pour plus d'information, contactez nous par mail juste en dessous. Sinon, pour acceder à la totalité du contenu et sniffer à volonter, inscrivez-vous et connectez-vous.</p><br>
+        <p>Nous sommes des élèves de la Nfactory School en première année Bachelor. Notre projet était de créer un site web sur les trames réseaux. L'objectif est <span class="italic">d' analyser des trames réseaux et les transmettre sous forme de statistiques</span> beaucoup plus clair et plus compréhensible.</p><br>
+        <p>Nous étions 4 pour réaliser ce projet dans un temps imparti de 2 semaines. Nous sommes des développeurs en développement, c'est notre seule devise. Pour plus d'information, contactez nous par mail juste en dessous. Sinon, pour acceder à la totalité du contenu et sniffer à volonter, inscrivez-vous et connectez-vous.</p><br>
         <p>Toute l'équipe vous remercie.</p>
     </div>
     <div class="clear"></div>
