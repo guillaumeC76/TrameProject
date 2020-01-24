@@ -436,6 +436,7 @@ thead th {
     text-transform: uppercase;
     background-color: #25313C;
     color: white;
+    width: 12.5%;
 }
 
 tbody td {
@@ -565,6 +566,25 @@ width: 48%;
 @media screen and (max-width: 920px) {
     .formpage #boutonenvoyer {
         font-size: 2.4vw;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .containerFlex{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .containerGraphique {
+        float: left;
+        width: 100%;
+    }
+
+    .containerGraphique2 {
+        float: left;
+        width: 100%;
     }
 }
 
