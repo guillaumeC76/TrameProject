@@ -137,11 +137,11 @@ if (!empty($_POST['modif'])) {
     $query->bindValue('email', $user[$i]['email'], PDO::PARAM_STR);
     $query->bindValue('role', $user[$i]['role'], PDO::PARAM_STR);
     $query->execute();
-    debug('"'.$user[$i]['pseudo'].'"');
+   // debug('"'.$user[$i]['pseudo'].'"');
 
 
 
-}
+} 
 
 
 ?>
